@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Delta Apps";
+}
+@*@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                To learn more about ASP.NET MVC visit
+                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
+                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
+                If you have any questions about ASP.NET MVC visit
+                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
+            </p>
+        </div>
+    </section>
+}*@
+<h3>Here you'll find downloads for some of my open-source productions. Hope you'll enjoy them:</h3>
+<article>
+    <ol class="round">
+        <li class="one">
+            <h5 id="Hawkeye2">Hawkeye2</h5>
+            <p>
+                A complete rewrite of the original <a href="https://hawkeye.codeplex.com/">Hawkeye .NET Runtime Object Editor</a>.
+            </p>
+            <p>
+                Note that this is very early stage and lots of work needs be completed to be as useful as the original one.
+            </p>
+            <p>
+                <ul>
+                    <li>Source code at github: <a href="https://github.com/odalet/Hawkeye2">https://github.com/odalet/Hawkeye2</a></li>
+                    <li>Latest releases (zip): <a href="https://github.com/odalet/Hawkeye2/releases">https://github.com/odalet/Hawkeye2/releases</a></li>
+                </ul>
+            </p>
+        </li>
+
+        <li class="two">
+            <h5 id="CertXplorer">CertXplorer</a></h5>
+            <p>
+                Use <b>CertXplorer</b> to inspect and manage certificates. Also useful to see what's inside any ASN.1/DER encoded data.
+            </p>
+            <p>
+                <ul>
+                    <li>Source code at github: <a href="https://github.com/odalet/Delta/tree/master/Delta.CertXplorer">https://github.com/odalet/Delta/tree/master/Delta.CertXplorer</a></li>
+                </ul>
+            </p>
+        </li>
+
+        <li class="three">
+            <h5 id="Delta.CapiNet">Delta.CapiNet</h5>
+            <p>
+                Simple .NET wrapper around Windows' Crypto API functions. 
+            </p>
+            <p>
+                The aim of this library is to provide a similar set of functionalities to what's provided 
+                by <code><a href="http://en.wikipedia.org/wiki/CAPICOM">CAPICOM</a></code> but with no COM 
+                dependency. The library builds on top of the .NET framework (uses 
+                <a href="http://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509certificate2.aspx">X509 Certificate classes</a> and the <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa379884.aspx"><code>crypt32.dll</code></a> through P/Invoke.
+            </p>
+            <p>Note that <a href="#CertXplorer">CertXplorer</a> builds on top of <a href="#Delta.CapiNet">Delta.CapiNet</a>.</p>
+            <ul>
+                <li>Source code at github: <a href="https://github.com/odalet/Delta/tree/master/Delta.CapiNet">https://github.com/odalet/Delta/tree/master/Delta.CapiNet</a></li>
+            </ul>
+        </li>
+
+        <li class="four">
+            <h5 id="Delta.Wsq">Delta.Wsq</h5>
+            <p>
+                <a href="http://en.wikipedia.org/wiki/Wavelet_Scalar_Quantization">WSQ</a> is an image format and compression 
+                algorithm (generally) used to store fingerprint images. <a href="#Delta.Wsq">Delta.Wsq</a> is a WSQ encoder/decoder 
+                based on the <a href="http://www.nist.gov/itl/iad/ig/nbis.cfm">NIST</a> implementation.
+            </p>
+            <p>
+                The codec can be used from Windows Forms as well as WPF applications (as it supports both 
+                <code>System.Drawing.Bitmap</code> and <code>System.Windows.Media.Imaging.BitmapSource</code>)
+            </p>
+            <p>
+                As well as the codec assembly (<code>Delta.Wsq.dll</code>) a plugin for 
+                <a href="http://www.getpaint.net/">Paint.NET</a> is also provided as a working example.
+            </p>
+            <ul>
+                <li>Source code at github: <a href="https://github.com/odalet/Delta/tree/master/Delta.Wsq">https://github.com/odalet/Delta/tree/master/Delta.Wsq</a></li>
+                <li>Get the Paint.NET plugin here: <a href="http://forums.getpaint.net/index.php?/topic/26657-wsq-file-plugin/">http://forums.getpaint.net/index.php?/topic/26657-wsq-file-plugin/</a></li>
+            </ul>
+        </li>
+    </ol>
+</article>
