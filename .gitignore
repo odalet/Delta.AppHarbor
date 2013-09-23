@@ -1,0 +1,9 @@
+*.suo
+
+/src/Delta.AppHarbor/*.user
+
+/src/Delta.AppHarbor/obj/Debug/*.cache
+/src/packages
+/src/Delta.AppHarbor/bin
+
+/src/Delta.AppHarbor/obj

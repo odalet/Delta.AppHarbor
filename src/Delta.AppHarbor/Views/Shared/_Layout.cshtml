@@ -12,7 +12,10 @@
     <header>
         <div class="content-wrapper">
             <div class="float-left">
-                <p class="site-title">@Html.ActionLink("Delta Apps", "Index", "Home")</p>
+                <p class="site-title">
+                    <img src="~/Images/logo256.png" width="48" height="48" style="margin-left:1px;margin-top:5px;position:absolute" />
+                    @Html.ActionLink("Delta Apps", "Index", "Home", new { style = "margin-left:64px" })
+                </p>
             </div>
             <div class="float-right">
                 <nav>
