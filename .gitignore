@@ -7,3 +7,8 @@
 /src/Delta.AppHarbor/bin
 
 /src/Delta.AppHarbor/obj
+/src/Delta.AppHarbor.Mvc4/*.user
+
+/src/Delta.AppHarbor.Mvc4/bin
+
+/src/Delta.AppHarbor.Mvc4/obj/Debug
