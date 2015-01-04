@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E9D7DD
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delta.AppHarbor.Mvc4", "Delta.AppHarbor.Mvc4\Delta.AppHarbor.Mvc4.csproj", "{FC99658A-5093-4DC4-8FA6-104884691261}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delta.AppHarbor.Mvc5", "Delta.AppHarbor.Mvc5\Delta.AppHarbor.Mvc5.csproj", "{EAFBFDEA-9035-42D5-8D88-44CBAFD2E1BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Siti.Data", "Siti.Data\Siti.Data.csproj", "{F784E485-4563-4E9E-A952-25CFB1F4565F}"
@@ -22,10 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC99658A-5093-4DC4-8FA6-104884691261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC99658A-5093-4DC4-8FA6-104884691261}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC99658A-5093-4DC4-8FA6-104884691261}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC99658A-5093-4DC4-8FA6-104884691261}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EAFBFDEA-9035-42D5-8D88-44CBAFD2E1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EAFBFDEA-9035-42D5-8D88-44CBAFD2E1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAFBFDEA-9035-42D5-8D88-44CBAFD2E1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
