@@ -30,13 +30,20 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("Delta Apps", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Siti Api Help", "Index", "Help", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
-            @*<div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("Siti Api Help", "Index", "Help", new { area = "" }, null)</li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Siti Api Examples<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/siti/persons/">All Persons</a></li>
+                                <li><a href="/siti/persons/1">Person with id 1</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                </div>*@
+                </div>
         </div>
     </div>
     <div class="container body-content">
