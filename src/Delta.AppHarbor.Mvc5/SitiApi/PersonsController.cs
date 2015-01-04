@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Net.Http;
 using System.Linq;
 using System.Web.Http;
 using System.Collections.Generic;
@@ -15,31 +17,29 @@ namespace Delta.AppHarbor.Areas.SitiApi.Controllers
         // GET api/values
         public IEnumerable<SimplePerson> Get()
         {
-            try
+            return Try(() => _db.Persons.Select(p => new SimplePerson()
             {
-                return _db.Persons.Select(p => new SimplePerson()
-                {
-                    Id = p.Id,
-                    FirstName = p.FirstName,
-                    LastName = p.LastName,
-                    BirthDate = p.BirthDate
-                }).ToArray();
-            }
-            catch (Exception ex)
-            {
-                var debugEx = ex;
-                return null;
-            }
+                Id = p.Id,
+                FirstName = p.FirstName,
+                LastName = p.LastName,
+                BirthDate = p.BirthDate
+            }).ToArray());
         }
 
         // GET api/values/5
         public Person Get(long id)
         {
-            return _db.Persons
+            var found = Try(() => 
+                _db.Persons
                 .Include("Photo")
                 .Include("Signature")
                 .Include("Fingerprints")
-                .SingleOrDefault(p => p.Id == id);
+                .SingleOrDefault(p => p.Id == id));
+                        
+            if (found == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            return found;
         }
 
         /// <summary>
@@ -51,6 +51,24 @@ namespace Delta.AppHarbor.Areas.SitiApi.Controllers
             if (disposing)
                 _db.Dispose();
             base.Dispose(disposing);
+        }
+
+        private T Try<T>(Func<T> function)
+        {
+            try
+            {
+                return function();
+            }
+            catch (Exception ex)
+            {
+                // http://www.asp.net/web-api/overview/error-handling/exception-handling
+                // Note: do not do that (reveal internal failure cause) in real applications 
+                throw new HttpResponseException(
+                    new HttpResponseMessage(HttpStatusCode.InternalServerError)
+                    {
+                        ReasonPhrase = ex.Message
+                    });
+            }
         }
     }
 }
