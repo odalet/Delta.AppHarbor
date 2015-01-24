@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Linq;
 using System.Web.Http;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace Delta.AppHarbor.Areas.SitiApi.Controllers
     {
         private DataContext _db = new DataContext();
 
-        // GET api/values
+        // GET siti/Persons
         public IEnumerable<SimplePerson> Get()
         {
             return Try(() => _db.Persons.Select(p => new SimplePerson()
@@ -22,12 +23,14 @@ namespace Delta.AppHarbor.Areas.SitiApi.Controllers
                 Id = p.Id,
                 FirstName = p.FirstName,
                 LastName = p.LastName,
-                BirthDate = p.BirthDate
+                Gender = p.Gender,
+                BirthDate = p.BirthDate,
+                Thumbnail = p.PhotoThumbnail
             }).ToArray());
         }
 
-        // GET api/values/5
-        public Person Get(long id)
+        // GET siti/Persons/5
+        public FullPerson Get(long id)
         {
             var found = Try(() => 
                 _db.Persons
@@ -37,9 +40,16 @@ namespace Delta.AppHarbor.Areas.SitiApi.Controllers
                 .SingleOrDefault(p => p.Id == id));
                         
             if (found == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            {
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
+                response.Content = new StringContent(string.Format(
+                    "<h1>Person with id {0} could not be found!</h1>", id),
+                    Encoding.UTF8, "text/html");
 
-            return found;
+                throw new HttpResponseException(response); 
+            }
+
+            return new FullPerson(found);
         }
 
         /// <summary>

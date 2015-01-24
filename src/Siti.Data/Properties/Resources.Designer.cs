@@ -73,6 +73,16 @@ namespace Siti.Data.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] jf3Thumb {
+            get {
+                object obj = ResourceManager.GetObject("jf3Thumb", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] Lucienne {
             get {
                 object obj = ResourceManager.GetObject("Lucienne", resourceCulture);
@@ -93,9 +103,29 @@ namespace Siti.Data.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] LucienneThumb {
+            get {
+                object obj = ResourceManager.GetObject("LucienneThumb", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] odaletJpeg {
             get {
                 object obj = ResourceManager.GetObject("odaletJpeg", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] odaletThumb {
+            get {
+                object obj = ResourceManager.GetObject("odaletThumb", resourceCulture);
                 return ((byte[])(obj));
             }
         }

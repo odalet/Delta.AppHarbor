@@ -154,4 +154,13 @@
   <data name="tbcThumbRight2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tbcThumbRight2.wsq;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="jf3Thumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jf3Thumb.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LucienneThumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LucienneThumb.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="odaletThumb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\odaletThumb.bin;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

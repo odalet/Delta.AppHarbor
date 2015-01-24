@@ -21,6 +21,10 @@ namespace Siti.Data
             var photo2 = new Blob() { Data = Properties.Resources.jf3, MimeType = WellKnownMimeTypes.Jpeg2000 };
             var photo3 = new Blob() { Data = Properties.Resources.odaletJpeg, MimeType = WellKnownMimeTypes.Jpeg };
 
+            var thumbnail1 = new Blob() { Data = Properties.Resources.LucienneThumb, MimeType = WellKnownMimeTypes.Jpeg };
+            var thumbnail2 = new Blob() { Data = Properties.Resources.jf3Thumb, MimeType = WellKnownMimeTypes.Jpeg };
+            var thumbnail3 = new Blob() { Data = Properties.Resources.odaletThumb, MimeType = WellKnownMimeTypes.Jpeg };
+
             var fp1 = new Fingerprint[]
             {
                 new Fingerprint() { Finger = Finger.LeftThumb, Data = Properties.Resources.tbcThumbLeft1, MimeType = WellKnownMimeTypes.Wsq },
@@ -45,7 +49,12 @@ namespace Siti.Data
                 FirstName = "Lucienne",
                 LastName = "Specimen",
                 BirthDate = "19800101",
+                Gender = Gender.Female,
+                Address = @"1 Rue Ponce Pilate
+06300 Nice
+France",
                 Photo = photo1,
+                PhotoThumbnail = thumbnail1,
                 Signature = signature1,
                 Fingerprints = fp1
             };
@@ -55,7 +64,10 @@ namespace Siti.Data
                 FirstName = "John",
                 LastName = "Doe",
                 BirthDate = "19530200",
+                Gender = Gender.Male,
+                Address = null,
                 Photo = photo2,
+                PhotoThumbnail = thumbnail2,
                 Signature = signature2,
                 Fingerprints = fp2
             };
@@ -65,7 +77,12 @@ namespace Siti.Data
                 FirstName = "Jean-Sébastien",
                 LastName = "Bach",
                 BirthDate = "16850000",
+                Address = @"Ritterstraße 26
+04109 Leipzig
+Deutschland",
+                Gender = Gender.Male,
                 Photo = photo3,
+                PhotoThumbnail = thumbnail3,
                 Signature = signature3,
                 Fingerprints = fp3
             };

@@ -54,6 +54,7 @@
     <Compile Include="DataInitializer.cs" />
     <Compile Include="Finger.cs" />
     <Compile Include="Fingerprint.cs" />
+    <Compile Include="Gender.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -67,9 +68,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Resources\jf3.jp2" />
+    <None Include="Resources\jf3Thumb.bin" />
     <None Include="Resources\Lucienne.jp2" />
+    <None Include="Resources\LucienneThumb.bin" />
     <None Include="Resources\Lucienne_Sign.jp2" />
     <None Include="Resources\odaletJpeg.bin" />
+    <None Include="Resources\odaletThumb.bin" />
     <None Include="Resources\ODThumbLeft1.wsq" />
     <None Include="Resources\ODThumbRight1.wsq" />
     <None Include="Resources\sign.jp2" />
