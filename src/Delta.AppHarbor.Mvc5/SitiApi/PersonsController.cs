@@ -18,27 +18,19 @@ namespace Delta.AppHarbor.Areas.SitiApi.Controllers
         // GET siti/Persons
         public IEnumerable<SimplePerson> Get()
         {
-            return Try(() => _db.Persons.Select(p => new SimplePerson()
-            {
-                Id = p.Id,
-                FirstName = p.FirstName,
-                LastName = p.LastName,
-                Gender = p.Gender,
-                BirthDate = p.BirthDate,
-                Thumbnail = p.PhotoThumbnail
-            }).ToArray());
+            return Try(() => _db.Persons.ToArray().Select(p => new SimplePerson(p)));
         }
 
         // GET siti/Persons/5
         public FullPerson Get(long id)
         {
-            var found = Try(() => 
+            var found = Try(() =>
                 _db.Persons
                 .Include("Photo")
                 .Include("Signature")
                 .Include("Fingerprints")
                 .SingleOrDefault(p => p.Id == id));
-                        
+
             if (found == null)
             {
                 var response = new HttpResponseMessage(HttpStatusCode.NotFound);
@@ -46,7 +38,7 @@ namespace Delta.AppHarbor.Areas.SitiApi.Controllers
                     "<h1>Person with id {0} could not be found!</h1>", id),
                     Encoding.UTF8, "text/html");
 
-                throw new HttpResponseException(response); 
+                throw new HttpResponseException(response);
             }
 
             return new FullPerson(found);

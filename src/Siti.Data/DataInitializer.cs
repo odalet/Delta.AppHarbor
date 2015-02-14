@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Drawing;
 
 namespace Siti.Data
 {
@@ -48,7 +49,11 @@ namespace Siti.Data
             {
                 FirstName = "Lucienne",
                 LastName = "Specimen",
+                Nationality = "FRA",
+                EyesColor = Color.Blue.Name,
+                Height = 165,
                 BirthDate = "19800101",
+                BirthPlace = "Paris (75001), France",
                 Gender = Gender.Female,
                 Address = @"1 Rue Ponce Pilate
 06300 Nice
@@ -63,7 +68,11 @@ France",
             {
                 FirstName = "John",
                 LastName = "Doe",
+                Nationality = "USA",
+                EyesColor = Color.Black.Name,
+                Height = 183,
                 BirthDate = "19530200",
+                BirthPlace = "",
                 Gender = Gender.Male,
                 Address = null,
                 Photo = photo2,
@@ -76,7 +85,11 @@ France",
             {
                 FirstName = "Jean-Sébastien",
                 LastName = "Bach",
+                Nationality = "DEU",
+                EyesColor = Color.Brown.Name,
+                Height = 175,
                 BirthDate = "16850000",
+                BirthPlace = "Eisenach (Sachsen-Eisenach)",
                 Address = @"Ritterstraße 26
 04109 Leipzig
 Deutschland",

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Drawing;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Siti.Data
 {
@@ -12,9 +14,17 @@ namespace Siti.Data
 
         public string LastName { get; set; }
 
+        public string Nationality { get; set; }
+
+        public string EyesColor { get; set; }
+
+        public int Height { get; set; }
+
         public Gender Gender { get; set; }
-        
+
         public string BirthDate { get; set; }
+
+        public string BirthPlace { get; set; }
 
         public string Address { get; set; }
 
