@@ -18,6 +18,7 @@ namespace Delta.AppHarbor.Models
             Height = person.Height;
             Gender = person.Gender;
             BirthDate = person.BirthDate;
+            Thumbnail = person.PhotoThumbnail;
         }
 
         public long Id { get; set; }

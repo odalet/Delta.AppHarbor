@@ -18,7 +18,7 @@ namespace Delta.AppHarbor.Areas.SitiApi.Controllers
         // GET siti/Persons
         public IEnumerable<SimplePerson> Get()
         {
-            return Try(() => _db.Persons.ToArray().Select(p => new SimplePerson(p)));
+            return Try(() => _db.Persons.Include("PhotoThumbnail").ToArray().Select(p => new SimplePerson(p)));
         }
 
         // GET siti/Persons/5
