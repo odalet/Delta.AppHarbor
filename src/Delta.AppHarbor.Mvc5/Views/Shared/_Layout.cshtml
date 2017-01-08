@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.css" />  
     @Scripts.Render("~/bundles/modernizr")
 
     <!-- Google Analytics -->
@@ -33,17 +34,18 @@
                 @*@Html.ActionLink("Siti Api Help", "Index", "Help", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Siti Api Help", "Index", "Help", new { area = "" }, null)</li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Siti Api Examples<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/siti/persons/">All Persons</a></li>
-                                <li><a href="/siti/persons/1">Person with id 1</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("My Stock", "Index", "MyStock", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Siti Api Help", "Index", "Help", new { area = "" }, null)</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Siti Api Examples<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/siti/persons/">All Persons</a></li>
+                            <li><a href="/siti/persons/1">Person with id 1</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="container body-content">
