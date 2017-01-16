@@ -190,12 +190,11 @@ function getHistoricalData() {
     var params = {
         format: 'json',
         env: 'http://datatables.org/alltables.env',
-        q: yql,
-        callback: '?'
+        q: yql
     }
 
     var queryString = $.param(params);
-    var url = api + '?' + queryString;
+    var url = api + '?' + queryString + '&callback=?'; // callback parameter activates JSONP
 
     $.getJSON(url, callback);
 }
