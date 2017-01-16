@@ -186,12 +186,12 @@ function getHistoricalData() {
     }
 
     var yql = 'select * from yahoo.finance.historicaldata where symbol in (' + symbols + ') and startDate = "' + startDate + '" and endDate = "' + endDate + '"';
-    //yql = 'select * from yahoo.finance.historicaldata where startDate = "' + startDate + '" and endDate = "' + endDate + '"';
     var api = 'http://query.yahooapis.com/v1/public/yql';
     var params = {
         format: 'json',
         env: 'http://datatables.org/alltables.env',
-        q: yql
+        q: yql,
+        callback: '?'
     }
 
     var queryString = $.param(params);
