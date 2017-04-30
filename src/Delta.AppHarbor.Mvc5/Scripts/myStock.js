@@ -67,15 +67,16 @@ var callback = function (data) {
         var close = data.query.results.quote[i].Close;
         var mul = findMultiplier(symbol);
         var name = findName(symbol);
+        name += " [" + symbol + "]";
 
         var index = dates.indexOf(date);
         if (index == -1) {
             index = dates.push(date) - 1;
         }
 
-        var currentSymbolIndex = symbols.indexOf(symbol);
+        var currentSymbolIndex = symbols.indexOf(name);
         if (currentSymbolIndex == -1) {
-            currentSymbolIndex = symbols.push(symbol) - 1;
+            currentSymbolIndex = symbols.push(name) - 1;
         }
 
         if (!quotes[currentSymbolIndex]) {
@@ -85,6 +86,28 @@ var callback = function (data) {
         quotes[currentSymbolIndex][index] = close * mul;
     }
 
+    // money
+    quotes.push([]);
+    var moneyIndex = symbols.length;
+    var moneyAmount = 100;
+    var statoilAdded = false;
+    var shellAdded = false;
+    for (var i = dates.length - 1; i >= 0; i--) {
+        if (dates[i] >= '2017-03-30' && !shellAdded) {
+            moneyAmount += 35.29;
+            shellAdded = true;
+        }
+
+        if (dates[i] >= '2017-04-11' && !statoilAdded) {
+            moneyAmount += 86.02;
+            statoilAdded = true;
+        }
+
+        quotes[moneyIndex][i] = moneyAmount;
+    }
+    symbols.push("Money");
+
+    // total
     quotes.push([]);
     var totalIndex = symbols.length;
     for (var i = 0; i < dates.length; i++) {
@@ -129,6 +152,7 @@ var callback = function (data) {
         },
         grid: {
             y: {
+                show : true,
                 lines: [
                     { value: 44987.89, text: 'MIN' }
                 ]
@@ -186,12 +210,12 @@ function getHistoricalData() {
     }
 
     var yql = 'select * from yahoo.finance.historicaldata where symbol in (' + symbols + ') and startDate = "' + startDate + '" and endDate = "' + endDate + '"';
-    //yql = 'select * from yahoo.finance.historicaldata where startDate = "' + startDate + '" and endDate = "' + endDate + '"';
-    var api = 'http://query.yahooapis.com/v1/public/yql';
+    var api = 'https://query.yahooapis.com/v1/public/yql';
     var params = {
+        q: yql,
         format: 'json',
-        env: 'http://datatables.org/alltables.env',
-        q: yql
+        diagnostic: true,
+        env: 'store://datatables.org/alltableswithkeys'
     }
 
     var queryString = $.param(params);
